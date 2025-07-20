@@ -21,10 +21,13 @@ const publications = defineCollection({
   schema: () =>
     z.object({
       title: z.string(),
+      coauthors: z.array(z.string()).optional(),
       // Transform string to Date object
       pubDate: z.coerce.date(),
+      year: z.number().optional(),
+      journal: z.string().optional(),
       image: z.string().optional(),
-      url: z.string().url()
+      url: z.string().url().optional()
     })
 })
 
