@@ -18,3 +18,22 @@ export async function getSortedFilteredPosts() {
       b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
   )
 }
+
+/**
+ * Get all publications, filtering out publications whose filenames start with _
+ */
+export async function getFilteredPublications() {
+  const publications = await getCollection('publications')
+  return publications.filter((publication: CollectionEntry<'publications'>) => !publication.id.startsWith('_'))
+}
+
+/**
+ * Get all publications sorted by publication date, filtering out publications whose filenames start with _
+ */
+export async function getSortedFilteredPublications() {
+  const publications = await getFilteredPublications()
+  return publications.sort(
+    (a: CollectionEntry<'publications'>, b: CollectionEntry<'publications'>) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  )
+}
