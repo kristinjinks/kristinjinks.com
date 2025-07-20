@@ -2,15 +2,11 @@
 title: 'About'
 ---
 
-<!--
-This content will be displayed at the top of the index page.
-You can leave this empty if you don’t want to show any content.
--->
+<div style="text-align: center; margin-bottom: 2rem;">
+  <img src="/src/content/about/kristin.png" alt="Kristin Jinks" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;" />
+</div>
 
-A static blog theme based on [Astro](https://astro.build), designed for clarity and focus.
+Research Officer in Marine Science
+PhD candidate researching estuarine food webs and fisheries
 
-With a deliberately minimal design, this layout ensures your content takes center stage. It's built for flexibility, offering customization options that honor its clean and elegant aesthetic.
-
-Effortlessly share your thoughts in _a calm & dustless space._
-
-Check posts for details and view source on [GitHub](https://github.com/the3ash/astro-chiri).
+[Twitter](https://twitter.com/KristinJinks)
