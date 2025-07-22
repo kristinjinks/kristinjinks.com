@@ -22,7 +22,7 @@ const { enabled = true } = Astro.props
 
 const minDuration = 10
 const maxDuration = 60
-const fishCount = 30
+const fishCount = 3
 const fishEmojis = ['🐡', '🐠', '🐟']
 ---
 
@@ -54,6 +54,8 @@ const fishEmojis = ['🐡', '🐠', '🐟']
       const duration = getRandomDuration()
       const isRightToLeft = Math.random() < 0.5
       const yPosition = getRandomY()
+      const startX = isRightToLeft ? window.innerWidth + 50 : -50
+      const endX = isRightToLeft ? -50 : window.innerWidth + 50
 
       fish.innerHTML = fishEmoji
       fish.setAttribute('aria-hidden', 'true')
@@ -65,41 +67,50 @@ const fishEmojis = ['🐡', '🐠', '🐟']
           cursor: pointer;
           z-index: 1;
           top: ${yPosition}px;
-          ${isRightToLeft ? 'right: -50px;' : 'left: -50px;'}
-          ${isRightToLeft ? '' : 'transform: scaleX(-1);'}
-          transition: ${isRightToLeft ? 'right' : 'left'} ${duration}s linear;
+          left: 0;
+          transform: translateX(${startX}px) ${isRightToLeft ? '' : 'scaleX(-1)'};
+          transition: transform ${duration}s linear;
         `
 
+      let animationTimeout
+      let bubbleTimeout
+      let isClicked = false
+
       // Add click handler to turn fish into bubbles
-      fish.addEventListener('click', () => {
+      const clickHandler = () => {
+        if (isClicked) return
+        isClicked = true
+
         fish.innerHTML = '🫧'
         fish.style.cursor = 'default'
 
-        fish.removeEventListener('click', () => {})
+        // Clear animation timeout
+        if (animationTimeout) {
+          clearTimeout(animationTimeout)
+        }
 
         // Remove after 100ms
-        setTimeout(() => {
+        bubbleTimeout = setTimeout(() => {
           if (fish.parentNode) {
             fish.parentNode.removeChild(fish)
           }
         }, 100)
-      })
+      }
+
+      fish.addEventListener('click', clickHandler)
 
       fishContainer.appendChild(fish)
 
       // Start animation
       requestAnimationFrame(() => {
-        if (isRightToLeft) {
-          fish.style.right = `${window.innerWidth + 50}px`
-        } else {
-          fish.style.left = `${window.innerWidth + 50}px`
-        }
+        fish.style.transform = `translateX(${endX}px) ${isRightToLeft ? '' : 'scaleX(-1)'}`
       })
 
-      // Remove fish after animation
-      setTimeout(
+      // Remove fish after animation with proper cleanup
+      animationTimeout = setTimeout(
         () => {
-          if (fish.parentNode) {
+          if (!isClicked && fish.parentNode) {
+            fish.removeEventListener('click', clickHandler)
             fish.parentNode.removeChild(fish)
           }
         },
