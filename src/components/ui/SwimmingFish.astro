@@ -72,8 +72,7 @@ const fishEmojis = ['🐡', '🐠', '🐟']
           transition: transform ${duration}s linear;
         `
 
-      let animationTimeout
-      let bubbleTimeout
+      let animationTimeout // eslint-disable-line prefer-const
       let isClicked = false
 
       // Add click handler to turn fish into bubbles
@@ -90,7 +89,7 @@ const fishEmojis = ['🐡', '🐠', '🐟']
         }
 
         // Remove after 100ms
-        bubbleTimeout = setTimeout(() => {
+        setTimeout(() => {
           if (fish.parentNode) {
             fish.parentNode.removeChild(fish)
           }
