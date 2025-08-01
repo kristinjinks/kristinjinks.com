@@ -4,20 +4,40 @@ import ThemeToggle from '@/components/ui/ThemeToggle.astro'
 ---
 
 <header>
-  <nav>
-    <a href="/">{themeConfig.site.title}</a>
-    <ThemeToggle />
-  </nav>
+  <div class="header-content">
+    <img src="/src/content/about/kristin.png" alt="Kristin Jinks" class="profile-image" />
+    <nav>
+      <a href="/">{themeConfig.site.title}</a>
+      <ThemeToggle />
+    </nav>
+  </div>
 </header>
 <style>
   header {
     margin: 0;
   }
+  
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
+  
   header a {
     font-weight: 700;
     color: var(--text-primary);
