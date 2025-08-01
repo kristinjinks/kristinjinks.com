@@ -1,0 +1,157 @@
+---
+/**
+ * SwimmingFish Component
+ *
+ * Creates animated fish emojis (🐡🐠🐟) that swim across the page at random Y positions.
+ * Fish swim in linear motion from left-to-right or right-to-left with configurable timing.
+ * Clicking a fish turns it into bubbles (🫧) for 1 second before removal.
+ *
+ * Configuration:
+ * - enabled: Toggle the animation on/off (configurable in themeConfig.general.fishAnimation)
+ * - minDuration: Minimum time (seconds) to cross the page (default: 10)
+ * - maxDuration: Maximum time (seconds) to cross the page (default: 60)
+ * - fishCount: Number of initial fish spawned (default: 3)
+ * - fishEmojis: Array of fish emojis to use (default: ['🐡', '🐠', '🐟'])
+ */
+
+interface Props {
+  enabled?: boolean
+}
+
+const { enabled = true } = Astro.props
+
+const minDuration = 10
+const maxDuration = 60
+const fishCount = 30
+const fishEmojis = ['🐡', '🐠', '🐟']
+---
+
+<>
+  <div id="fish-container"></div>
+  <script is:inline define:vars={{ enabled, minDuration, maxDuration, fishCount, fishEmojis }}>
+    if (!enabled) return
+
+    let fishContainer
+
+    function getRandomFish() {
+      return fishEmojis[Math.floor(Math.random() * fishEmojis.length)]
+    }
+
+    function getRandomDuration() {
+      return minDuration + Math.random() * (maxDuration - minDuration)
+    }
+
+    function getRandomY() {
+      // Get a random Y position within the document height, accounting for viewport
+      const docHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight)
+      const viewportHeight = window.innerHeight
+      return Math.random() * Math.max(docHeight - 100, viewportHeight - 100)
+    }
+
+    function createFish() {
+      const fish = document.createElement('div')
+      const fishEmoji = getRandomFish()
+      const duration = getRandomDuration()
+      const isRightToLeft = Math.random() < 0.5
+      const yPosition = getRandomY()
+      const startX = isRightToLeft ? window.innerWidth + 50 : -50
+      const endX = isRightToLeft ? -50 : window.innerWidth + 50
+
+      fish.innerHTML = fishEmoji
+      fish.setAttribute('aria-hidden', 'true')
+      fish.setAttribute('role', 'presentation')
+      fish.style.cssText = `
+          position: absolute;
+          font-size: 24px;
+          pointer-events: auto;
+          cursor: pointer;
+          z-index: 1;
+          top: ${yPosition}px;
+          left: 0;
+          transform: translateX(${startX}px) ${isRightToLeft ? '' : 'scaleX(-1)'};
+          transition: transform ${duration}s linear;
+        `
+
+      let animationTimeout // eslint-disable-line prefer-const
+      let isClicked = false
+
+      // Add click handler to turn fish into bubbles
+      const clickHandler = () => {
+        if (isClicked) return
+        isClicked = true
+
+        fish.innerHTML = '🫧'
+        fish.style.cursor = 'default'
+
+        // Clear animation timeout
+        if (animationTimeout) {
+          clearTimeout(animationTimeout)
+        }
+
+        // Remove after 100ms
+        setTimeout(() => {
+          if (fish.parentNode) {
+            fish.parentNode.removeChild(fish)
+          }
+        }, 100)
+      }
+
+      fish.addEventListener('click', clickHandler)
+
+      fishContainer.appendChild(fish)
+
+      // Start animation
+      requestAnimationFrame(() => {
+        fish.style.transform = `translateX(${endX}px) ${isRightToLeft ? '' : 'scaleX(-1)'}`
+      })
+
+      // Remove fish after animation with proper cleanup
+      animationTimeout = setTimeout(
+        () => {
+          if (!isClicked && fish.parentNode) {
+            fish.removeEventListener('click', clickHandler)
+            fish.parentNode.removeChild(fish)
+          }
+        },
+        duration * 1000 + 100
+      )
+    }
+
+    function startFishAnimation() {
+      // Create initial fish
+      for (let i = 0; i < fishCount; i++) {
+        setTimeout(() => createFish(), Math.random() * 5000)
+      }
+
+      // Create new fish at random intervals
+      function scheduleFish() {
+        const delay = 3000 + Math.random() * 10000 // 3-13 seconds
+        setTimeout(() => {
+          createFish()
+          scheduleFish()
+        }, delay)
+      }
+
+      scheduleFish()
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      fishContainer = document.getElementById('fish-container')
+      if (fishContainer) {
+        startFishAnimation()
+      }
+    })
+
+    // Handle window resize
+    let resizeTimeout
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout)
+      resizeTimeout = setTimeout(() => {
+        // Clear existing fish on resize to avoid positioning issues
+        if (fishContainer) {
+          fishContainer.innerHTML = ''
+        }
+      }, 250)
+    })
+  </script>
+</>
