@@ -1,7 +1,5 @@
 ---
-import FormattedDate from '@/components/widgets/FormattedDate.astro'
 import type { PublicationListProps } from '@/types'
-import { themeConfig } from '@/config'
 
 const { publications } = Astro.props as PublicationListProps
 ---
@@ -11,23 +9,17 @@ const { publications } = Astro.props as PublicationListProps
     publications.map((publication) => (
       <li>
         <a href={publication.data.url} target="_blank" rel="noopener noreferrer">
-          <div class={`publication-item ${!themeConfig.date.dateOnRight ? 'date-left' : ''}`}>
-            {!themeConfig.date.dateOnRight && (
-              <p class="date font-features">
-                <FormattedDate date={publication.data.pubDate} context="list" />
-              </p>
-            )}
-            <p class="title">{publication.data.title}</p>
-            {themeConfig.date.dateOnRight && (
-              <div
-                class={themeConfig.general.postListDottedDivider ? 'dotted-divider' : 'divider'}
-              />
-            )}
-            {themeConfig.date.dateOnRight && (
-              <p class="date font-features">
-                <FormattedDate date={publication.data.pubDate} context="list" />
-              </p>
-            )}
+          <div class="publication-item">
+            <h3 class="title">{publication.data.title}</h3>
+            <p class="details">
+              {publication.data.coauthors && publication.data.coauthors.length > 0 && (
+                <span class="authors">{publication.data.coauthors.join(', ')}, </span>
+              )}
+              {publication.data.journal && (
+                <span class="journal">{publication.data.journal}, </span>
+              )}
+              <span class="year">{publication.data.year || new Date(publication.data.pubDate).getFullYear()}</span>
+            </p>
           </div>
         </a>
       </li>
@@ -62,82 +54,29 @@ const { publications } = Astro.props as PublicationListProps
       opacity: 1;
     }
 
-    ul:hover a:hover .divider {
-      background-color: var(--text-tertiary);
-      opacity: 0.75;
-    }
-    ul:hover a:hover .dotted-divider {
-      color: var(--text-secondary);
-    }
-    ul:hover a:hover .date {
-      color: var(--text-secondary);
-      opacity: 1;
-    }
   }
 
   .publication-item {
-    height: 2.75rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .publication-item.date-left {
-    justify-content: flex-start;
-  }
-
-  .publication-item.date-left .title {
-    flex: 1 1 auto;
-    min-width: 0;
-  }
-
-  .publication-item.date-left .date {
-    margin-right: 0.75rem;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem 0;
   }
 
   .title {
     margin: 0;
-    flex-shrink: 1;
-    min-width: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.4;
   }
 
-  .date {
+  .details {
     margin: 0;
     color: var(--text-secondary);
-    opacity: 0.75;
-    letter-spacing: var(--spacing-s);
-    flex-shrink: 0;
-    white-space: nowrap;
+    font-size: 0.9rem;
+    line-height: 1.3;
   }
 
-  .divider {
-    flex: 1 1 auto;
-    min-width: 3rem;
-    margin: 0 0.25rem;
-    height: 0.5px;
-    background-color: var(--border);
-  }
-
-  .dotted-divider {
-    flex: 1 1 3rem;
-    min-width: 3rem;
-    max-width: 100%;
-    text-align: end;
-    letter-spacing: 5px;
-    height: 1.675rem;
-    overflow: hidden;
-    color: var(--text-tertiary);
-    opacity: 0.75;
-  }
-
-  .dotted-divider::after {
-    content: '·····························································································································································';
-    pointer-events: none;
-  }
 
   .placeholder {
     height: 3rem;
