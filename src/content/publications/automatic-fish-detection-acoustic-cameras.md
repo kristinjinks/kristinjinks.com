@@ -1,6 +1,6 @@
 ---
 title: 'Out of the shadows: automatic fish detection from acoustic cameras'
-authors: ['Kristin I. Jinks', 'Rod M. Connolly', 'A Shand', 'Matthew D. Taylor', 'Troy F. Gaston', 'A Becker']
+authors: ['R. Connolly', 'K. Jinks', 'A. Shand', 'M. Taylor', 'T. Gaston', 'A. Becker', 'E. L. Jinks']
 pubDate: '2023-01-01'
 year: 2023
 journal: 'Aquatic Ecology'
