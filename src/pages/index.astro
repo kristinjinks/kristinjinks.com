@@ -19,9 +19,11 @@ const publications = await getSortedFilteredPublications()
         <PublicationList publications={publications} />
       </section>
     )}
-    <section>
-      <h2>Posts</h2>
-      <PostList posts={posts} />
-    </section>
+    {posts.length > 0 && (
+      <section>
+        <h2>Posts</h2>
+        <PostList posts={posts} />
+      </section>
+    )}
   </main>
 </IndexLayout>
