@@ -24,11 +24,13 @@ const minDuration = 10
 const maxDuration = 60
 const fishCount = 30
 const fishEmojis = ['🐡', '🐠', '🐟']
+const bubbleCount = 15
+const bubbleEmojis = ['🫧']
 ---
 
 <>
   <div id="fish-container"></div>
-  <script is:inline define:vars={{ enabled, minDuration, maxDuration, fishCount, fishEmojis }}>
+  <script is:inline define:vars={{ enabled, minDuration, maxDuration, fishCount, fishEmojis, bubbleCount, bubbleEmojis }}>
     if (!enabled) return
 
     let fishContainer
@@ -46,6 +48,47 @@ const fishEmojis = ['🐡', '🐠', '🐟']
       const docHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight)
       const viewportHeight = window.innerHeight
       return Math.random() * Math.max(docHeight - 100, viewportHeight - 100)
+    }
+
+    function getRandomBubble() {
+      return bubbleEmojis[Math.floor(Math.random() * bubbleEmojis.length)]
+    }
+
+    function createBubble() {
+      const bubble = document.createElement('div')
+      const bubbleEmoji = getRandomBubble()
+      const duration = getRandomDuration()
+      const xPosition = Math.random() * window.innerWidth
+      const startY = window.innerHeight + 50
+      const endY = -50
+
+      bubble.innerHTML = bubbleEmoji
+      bubble.setAttribute('aria-hidden', 'true')
+      bubble.setAttribute('role', 'presentation')
+      bubble.style.cssText = `
+          position: absolute;
+          font-size: 24px;
+          pointer-events: none;
+          z-index: 1;
+          left: ${xPosition}px;
+          top: 0;
+          transform: translateY(${startY}px);
+          transition: transform ${duration}s linear;
+        `
+
+      fishContainer.appendChild(bubble)
+
+      // Start animation
+      requestAnimationFrame(() => {
+        bubble.style.transform = `translateY(${endY}px)`
+      })
+
+      // Remove bubble after animation
+      setTimeout(() => {
+        if (bubble.parentNode) {
+          bubble.parentNode.removeChild(bubble)
+        }
+      }, duration * 1000 + 100)
     }
 
     function createFish() {
@@ -123,6 +166,11 @@ const fishEmojis = ['🐡', '🐠', '🐟']
         setTimeout(() => createFish(), Math.random() * 5000)
       }
 
+      // Create initial bubbles
+      for (let i = 0; i < bubbleCount; i++) {
+        setTimeout(() => createBubble(), Math.random() * 5000)
+      }
+
       // Create new fish at random intervals
       function scheduleFish() {
         const delay = 3000 + Math.random() * 10000 // 3-13 seconds
@@ -132,7 +180,17 @@ const fishEmojis = ['🐡', '🐠', '🐟']
         }, delay)
       }
 
+      // Create new bubbles at random intervals
+      function scheduleBubble() {
+        const delay = 3000 + Math.random() * 10000 // 3-13 seconds
+        setTimeout(() => {
+          createBubble()
+          scheduleBubble()
+        }, delay)
+      }
+
       scheduleFish()
+      scheduleBubble()
     }
 
     document.addEventListener('DOMContentLoaded', () => {
