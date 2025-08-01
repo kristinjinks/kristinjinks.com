@@ -3,10 +3,10 @@ import type { ThemeConfig } from './types'
 export const themeConfig: ThemeConfig = {
   // SITE INFO ///////////////////////////////////////////////////////////////////////////////////////////
   site: {
-    website: 'https://astro-chiri.netlify.app/', // Site domain
+    website: 'https://kristinjinks.com/', // Site domain
     title: 'Kristin Jinks', // Site title
     author: 'Kristin Jinks', // Author name
-    description: 'Minimal blog built by Astro', // Site description
+    description: 'Marine science research, estuarine food webs, and fisheries insights', // Site description
     language: 'en-US' // Default language
   },
 
