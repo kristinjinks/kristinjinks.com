@@ -1,6 +1,6 @@
 ---
 title: 'The differential importance of deep and shallow seagrass to nekton assemblages of the great barrier reef'
-coauthors: ['MA Hayes', 'EC McClure', 'PH York', 'MA Rasheed', 'M Sheaves']
+authors: ['Matthew A. Hayes', 'Eva C. McClure', 'Paul H. York', 'Kristin I. Jinks', 'Michael A. Rasheed', 'Marcus Sheaves', 'Rod M. Connolly']
 pubDate: '2020-01-01'
 year: 2020
 journal: 'Diversity'

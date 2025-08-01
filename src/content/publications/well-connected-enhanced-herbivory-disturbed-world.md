@@ -1,6 +1,6 @@
 ---
 title: 'Being well-connected pays in a disturbed world: Enhanced herbivory in better-linked habitats'
-coauthors: ['CJ Brown', 'TA Schlacher', 'AD Olds', 'SL Engelhard', 'RM Pearson']
+authors: ['Kristin I. Jinks', 'Christopher J. Brown', 'Thomas A. Schlacher', 'Andrew D. Olds', 'Stephanie L. Engelhard', 'Ryan M. Pearson', 'Rod M. Connolly']
 pubDate: '2020-01-01'
 year: 2020
 journal: 'Diversity'

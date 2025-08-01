@@ -1,6 +1,6 @@
 ---
 title: 'Improved accuracy for automated counting of a fish in baited underwater videos for stock assessment'
-coauthors: ['RM Connolly', 'DV Fairclough', 'EM Ditria', 'G Jackson']
+authors: ['Rod M. Connolly', 'David V. Fairclough', 'Eric L. Jinks', 'Ellen M. Ditria', 'Gary Jackson', 'Sebastian Lopez-Marcano', 'Andrew D. Olds', 'Kristin I. Jinks']
 pubDate: '2021-01-01'
 year: 2021
 journal: 'Frontiers in Marine Science'

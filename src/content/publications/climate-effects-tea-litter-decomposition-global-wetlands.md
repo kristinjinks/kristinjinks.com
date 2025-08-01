@@ -1,6 +1,6 @@
 ---
 title: 'Climate effects on belowground tea litter decomposition depend on ecosystem and organic matter types in global wetlands'
-coauthors: ['SM Trevathan-Tackett', 'S Kepfer-Rojas', 'M Malerba', 'PI Macreadie', 'I Djukic']
+authors: ['Stacey M. Trevathan-Tackett', 'Sofie Kepfer-Rojas', 'Maria Malerba', 'Kristin I. Jinks', 'Peter I. Macreadie', 'Ika Djukic']
 pubDate: '2024-01-01'
 year: 2024
 journal: 'Environmental Science & Technology'

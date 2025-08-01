@@ -21,7 +21,7 @@ const publications = defineCollection({
   schema: () =>
     z.object({
       title: z.string(),
-      coauthors: z.array(z.string()).optional(),
+      authors: z.array(z.string()).optional(),
       // Transform string to Date object
       pubDate: z.coerce.date(),
       year: z.number().optional(),

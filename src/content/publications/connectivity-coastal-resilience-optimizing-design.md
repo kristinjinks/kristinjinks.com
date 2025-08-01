@@ -1,6 +1,6 @@
 ---
 title: 'Connectivity for coastal resilience: optimizing the design'
-coauthors: ['RM Connolly', 'AD Olds', 'SL Engelhard', 'CJ Brown', 'TA Schlacher']
+authors: ['Kristin I. Jinks', 'Rod M. Connolly', 'Andrew D. Olds', 'Stephanie L. Engelhard', 'Christopher J. Brown', 'Thomas A. Schlacher']
 pubDate: '2017-01-01'
 year: 2017
 journal: '24th Biennial CERF Conference'

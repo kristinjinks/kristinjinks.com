@@ -1,6 +1,6 @@
 ---
 title: 'Functional changes in reef systems in warmer seas: Asymmetrical effects of altered grazing by a widespread crustacean mesograzer'
-coauthors: ['RM Pearson', 'CJ Brown', 'TA Schlacher', 'RM Connolly']
+authors: ['Kristin I. Jinks', 'Ryan M. Pearson', 'Christopher J. Brown', 'Thomas A. Schlacher', 'Rod M. Connolly']
 pubDate: '2018-01-01'
 year: 2018
 journal: 'Science of the Total Environment'

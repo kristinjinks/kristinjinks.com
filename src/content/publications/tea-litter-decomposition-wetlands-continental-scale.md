@@ -1,6 +1,6 @@
 ---
 title: 'Ecosystem type drives tea litter decomposition and associated prokaryotic microbiome communities in freshwater and coastal wetlands at a continental scale'
-coauthors: ['SM Trevathan-Tackett', 'S Kepfer-Rojas', 'AH Engelen', 'PH York', 'A Ola', 'J Li']
+authors: ['Stacey M. Trevathan-Tackett', 'Sebastian Kepfer-Rojas', 'Aschwin H. Engelen', 'Paul H. York', 'Anne Ola', 'Jinquan Li', 'Jeffrey J. Kelleway', 'Kristin I. Jinks', 'Emma L. Jackson', 'Maria Fernanda Adame', 'Elise Pendall', 'Catherine E. Lovelock', 'Rod M. Connolly', 'Anne Watson', 'Inger Visby', 'Allison Trethowan', 'Ben Taylor', 'Tessa N.B. Roberts', 'Peter I. Macreadie']
 pubDate: '2021-01-01'
 year: 2021
 journal: 'Science of the Total Environment'

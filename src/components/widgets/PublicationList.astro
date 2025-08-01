@@ -12,8 +12,10 @@ const { publications } = Astro.props as PublicationListProps
           <div class="publication-item">
             <h3 class="title">{publication.data.title}</h3>
             <p class="details">
-              {publication.data.coauthors && publication.data.coauthors.length > 0 && (
-                <span class="authors">{publication.data.coauthors.join(', ')}, </span>
+              {publication.data.authors && publication.data.authors.length > 0 && (
+                <span class="authors">
+                  {publication.data.authors.join(', ')}, 
+                </span>
               )}
               {publication.data.journal && (
                 <span class="journal">{publication.data.journal}, </span>

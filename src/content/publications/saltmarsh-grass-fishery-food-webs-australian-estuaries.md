@@ -1,6 +1,6 @@
 ---
 title: 'Saltmarsh grass supports fishery food webs in subtropical Australian estuaries'
-coauthors: ['MA Rasheed', 'CJ Brown', 'AD Olds', 'TA Schlacher', 'M Sheaves']
+authors: ['Kristin I. Jinks', 'Michael A. Rasheed', 'Christopher J. Brown', 'Andrew D. Olds', 'Thomas A. Schlacher', 'Marcus Sheaves', 'Paul H. York', 'Rod M. Connolly']
 pubDate: '2020-01-01'
 year: 2020
 journal: 'Estuarine, Coastal and Shelf Science'
