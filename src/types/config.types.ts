@@ -13,6 +13,7 @@ export interface SiteInfo {
   author: string
   description: string
   language: string
+  semanticScholarAuthorId?: string
 }
 
 // General settings configuration type

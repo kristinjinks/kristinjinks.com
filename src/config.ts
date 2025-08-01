@@ -7,7 +7,8 @@ export const themeConfig: ThemeConfig = {
     title: 'Kristin Jinks', // Site title
     author: 'Kristin Jinks', // Author name
     description: 'Marine science research, estuarine food webs, and fisheries insights', // Site description
-    language: 'en-US' // Default language
+    language: 'en-US', // Default language
+    semanticScholarAuthorId: '35641950' // Semantic Scholar author ID
   },
 
   // GENERAL SETTINGS ////////////////////////////////////////////////////////////////////////////////////
