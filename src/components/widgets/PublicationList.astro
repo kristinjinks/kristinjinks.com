@@ -1,5 +1,6 @@
 ---
 import type { PublicationListProps } from '@/types'
+import AuthorList from '@/components/ui/AuthorList.astro'
 
 const { publications } = Astro.props as PublicationListProps
 ---
@@ -12,11 +13,7 @@ const { publications } = Astro.props as PublicationListProps
           <div class="publication-item">
             <h3 class="title">{publication.data.title}</h3>
             <p class="details">
-              {publication.data.authors && publication.data.authors.length > 0 && (
-                <span class="authors">
-                  {publication.data.authors.join(', ')}, 
-                </span>
-              )}
+              <AuthorList authors={publication.data.authors || []} />
               {publication.data.journal && (
                 <span class="journal">{publication.data.journal}, </span>
               )}

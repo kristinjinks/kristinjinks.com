@@ -1,0 +1,108 @@
+---
+export interface Props {
+  authors: string[]
+}
+
+const { authors } = Astro.props
+const shouldTruncate = authors && authors.length > 20
+const truncatedAuthors = shouldTruncate ? authors.slice(0, 20) : authors
+---
+
+{authors && authors.length > 0 && (
+  <span class="authors">
+    <span class="author-list">
+      {shouldTruncate ? (
+        <>
+          <span class="truncated-authors">{truncatedAuthors.join(', ')}</span>
+          <span class="full-authors" style="display: none;">{authors.join(', ')}</span>
+          <span class="et-al">, et al.</span>
+          <button class="show-full-authors" type="button" aria-expanded="false">
+            full author list
+          </button>
+        </>
+      ) : (
+        <span>{authors.join(', ')}</span>
+      )}
+    </span>, 
+  </span>
+)}
+
+<script>
+  function initializeAuthorToggles() {
+    const buttons = document.querySelectorAll('.show-full-authors')
+    
+    buttons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        
+        const authorList = button.closest('.author-list')
+        if (!authorList) return
+        
+        const truncatedAuthors = authorList.querySelector('.truncated-authors')
+        const fullAuthors = authorList.querySelector('.full-authors')
+        const etAl = authorList.querySelector('.et-al')
+        
+        if (!truncatedAuthors || !fullAuthors || !etAl) return
+        
+        const isExpanded = button.getAttribute('aria-expanded') === 'true'
+        
+        if (isExpanded) {
+          // Collapse to truncated view
+          truncatedAuthors.style.display = ''
+          fullAuthors.style.display = 'none'
+          etAl.style.display = ''
+          button.textContent = 'full author list'
+          button.setAttribute('aria-expanded', 'false')
+        } else {
+          // Expand to full view
+          truncatedAuthors.style.display = 'none'
+          fullAuthors.style.display = ''
+          etAl.style.display = 'none'
+          button.textContent = 'hide full list'
+          button.setAttribute('aria-expanded', 'true')
+        }
+      })
+    })
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', initializeAuthorToggles)
+  
+  // Re-initialize after view transitions (for Astro's built-in transitions)
+  document.addEventListener('astro:after-swap', initializeAuthorToggles)
+</script>
+
+<style>
+  .author-list {
+    display: inline;
+  }
+  
+  .show-full-authors {
+    background: none;
+    border: none;
+    color: var(--text-link, #0066cc);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+    margin-left: 0.25rem;
+    transition: color 0.15s ease-out;
+  }
+  
+  .show-full-authors:hover {
+    color: var(--text-link-hover, #0052a6);
+  }
+  
+  .show-full-authors:focus {
+    outline: 2px solid var(--text-link, #0066cc);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  
+  .truncated-authors,
+  .full-authors {
+    transition: opacity 0.15s ease-out;
+  }
+</style>
