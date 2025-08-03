@@ -1,6 +1,6 @@
 ---
 title: 'Estimating enhanced fish production on restored shellfish reefs using automated data collection from underwater videos'
-authors: ['Rod M. Connolly', 'Kristin I. Jinks', 'Cesar Herrera', 'Jeppe Rasmussen', 'Christopher A. Buelow', 'Michael Sievers']
+authors: ['Connolly RM', 'Jinks KI', 'Herrera C', 'Rasmussen J', 'Buelow CA', 'Sievers M']
 pubDate: '2024-01-01'
 year: 2024
 journal: 'Journal of Applied Ecology'

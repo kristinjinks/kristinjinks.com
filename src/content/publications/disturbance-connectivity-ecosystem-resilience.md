@@ -1,6 +1,6 @@
 ---
 title: 'Disturbance type determines how connectivity shapes ecosystem resilience'
-authors: ['Ryan M. Pearson', 'Thomas A. Schlacher', 'Kristin I. Jinks', 'Andrew D. Olds', 'Christopher J. Brown', 'Rod M. Connolly']
+authors: ['Pearson RM', 'Schlacher TA', 'Jinks KI', 'Olds AD', 'Brown CJ', 'Connolly RM']
 pubDate: '2021-01-01'
 year: 2021
 journal: 'Scientific Reports'

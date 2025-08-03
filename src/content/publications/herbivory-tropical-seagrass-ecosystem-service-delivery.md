@@ -1,6 +1,18 @@
 ---
 title: 'The role of herbivory in structuring tropical seagrass ecosystem service delivery'
-authors: ['Abigail L. Scott', 'Paul H. York', 'Catherine Duncan', 'Peter I. Macreadie', 'Rod M. Connolly', 'Matthew T. Ellis', 'Jessie C. Jarvis', 'Kristin I. Jinks', 'Helene Marsh', 'Michael A. Rasheed']
+authors:
+  [
+    'Scott AL',
+    'York PH',
+    'Duncan C',
+    'Macreadie PI',
+    'Connolly RM',
+    'Ellis MT',
+    'Jarvis JC',
+    'Jinks KI',
+    'Marsh H',
+    'Rasheed MA'
+  ]
 pubDate: '2018-01-01'
 year: 2018
 journal: 'Frontiers in Plant Science'

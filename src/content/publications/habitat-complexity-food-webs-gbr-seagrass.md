@@ -1,6 +1,6 @@
 ---
 title: 'Habitat complexity influences the structure of food webs in Great Barrier Reef seagrass meadows'
-authors: ['Kristin I. Jinks', 'Christopher J. Brown', 'Michael A. Rasheed', 'Abigail L. Scott', 'Marcus Sheaves', 'Paul H. York', 'Rod M. Connolly']
+authors: ['Jinks KI', 'Brown CJ', 'Rasheed MA', 'Scott AL', 'Sheaves M', 'York PH', 'Connolly RM']
 pubDate: '2019-01-01'
 year: 2019
 journal: 'Ecosphere'

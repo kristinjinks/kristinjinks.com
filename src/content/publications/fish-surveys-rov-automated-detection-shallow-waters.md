@@ -1,6 +1,6 @@
 ---
 title: 'Fish surveys on the move: Adapting automated fish detection and classification frameworks for videos on a remotely operated vehicle in shallow marine waters'
-authors: ['Rod M. Connolly', 'Kristin I. Jinks', 'Cesar Herrera', 'Sebastian Lopez-Marcano']
+authors: ['Connolly RM', 'Jinks KI', 'Herrera C', 'Lopez-Marcano S']
 pubDate: '2022-01-01'
 year: 2022
 journal: 'Frontiers in Marine Science'
