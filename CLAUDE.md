@@ -13,6 +13,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `pnpm format:check` - Check code formatting
 - `pnpm new <title>` - Create a new blog post (use `_title` for drafts)
 - `pnpm update-theme` - Update the theme to the latest version
+- **CAUTION**: Never run `pnpm format`
 
 ## Architecture Overview
 
