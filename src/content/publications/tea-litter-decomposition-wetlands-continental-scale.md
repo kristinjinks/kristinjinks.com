@@ -32,5 +32,3 @@ url: 'https://www.sciencedirect.com/science/article/pii/S0048969721018891'
 ---
 
 In this continental-scale study, we examine how ecosystem type drives variation in tea litter decomposition rates and associated prokaryotic microbiome communities across diverse freshwater and coastal wetland environments. Using standardized tea bag methodology across multiple sites, we demonstrate that ecosystem characteristics (salinity, temperature, oxygen levels) fundamentally shape both decomposition processes and microbial community structure. Our findings reveal distinct microbial signatures associated with different wetland types, providing insights into biogeochemical cycling and carbon processing in wetland ecosystems.
-
-**Citation count: 31**

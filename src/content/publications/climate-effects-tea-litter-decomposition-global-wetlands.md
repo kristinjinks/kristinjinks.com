@@ -9,5 +9,3 @@ url: 'https://pubs.acs.org/doi/10.1021/acs.est.4c02116'
 ---
 
 In this comprehensive global study, we examine how climate effects on belowground tea litter decomposition vary depending on ecosystem type and organic matter composition across diverse wetland environments worldwide. Using standardized decomposition experiments across 180+ sites spanning multiple continents, we reveal that climate sensitivity of decomposition processes is strongly mediated by local ecosystem characteristics and substrate quality. Our findings demonstrate that wetland type and organic matter chemistry create distinct climate-decomposition relationships, challenging simple global models of carbon cycling.
-
-**Citation count: 5**

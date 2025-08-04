@@ -7,7 +7,7 @@ const { publications } = Astro.props as PublicationListProps
 
 <ul>
   {
-    publications.map((publication) => (
+    publications.map((publication, index) => (
       <li>
         <a href={publication.data.url} target="_blank" rel="noopener noreferrer">
           <div class="publication-item">
@@ -19,8 +19,12 @@ const { publications } = Astro.props as PublicationListProps
               )}
               <span class="year">{publication.data.year || new Date(publication.data.pubDate).getFullYear()}</span>
             </p>
+            {publication.body && (
+              <div class="summary" set:html={publication.body} />
+            )}
           </div>
         </a>
+        {index < publications.length - 1 && <div class="separator" />}
       </li>
     ))
   }
@@ -84,6 +88,27 @@ const { publications } = Astro.props as PublicationListProps
     font-weight: bold;
   }
 
+  .summary {
+    margin-top: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .summary p {
+    margin: 0 0 0.5rem 0;
+  }
+
+  .summary p:last-child {
+    margin-bottom: 0;
+  }
+
+  .separator {
+    height: 1px;
+    background: var(--border);
+    margin: 1.5rem 0;
+  }
 
   .placeholder {
     height: 3rem;

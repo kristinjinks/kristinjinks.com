@@ -8,5 +8,3 @@ url: 'https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/1365-2664.146
 ---
 
 In this study, we develop innovative methods for quantifying fish production enhancement on restored shellfish reefs using automated underwater video analysis and computer vision technology. Our research demonstrates that restored oyster reefs significantly increase local fish production, with automated video analysis providing accurate, cost-effective monitoring compared to traditional sampling methods. By combining ecological restoration assessment with cutting-edge machine learning techniques, we establish new standards for measuring restoration success and provide scalable tools for adaptive management of marine habitat restoration projects.
-
-**Citation count: 14**
