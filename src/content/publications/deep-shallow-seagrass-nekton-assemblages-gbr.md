@@ -7,6 +7,6 @@ journal: 'Diversity'
 url: 'https://www.mdpi.com/1424-2818/12/8/292'
 ---
 
-This research examines the differential roles of deep and shallow seagrass habitats in supporting nekton assemblages within the Great Barrier Reef ecosystem. The study provides insights into depth-related habitat preferences and community structure in seagrass environments.
+We examined the differential importance of deep versus shallow seagrass habitats in supporting nekton assemblages within the Great Barrier Reef ecosystem. Using comprehensive field surveys, we reveal distinct community structures and species compositions between depth zones, with shallow seagrass beds supporting higher abundance and diversity of mobile fauna. Our findings demonstrate that depth gradients create unique ecological niches within seagrass meadows, highlighting the importance of protecting both shallow and deep seagrass habitats to maintain the full spectrum of marine biodiversity and ecosystem functioning in tropical marine environments.
 
 **Citation count: 25**

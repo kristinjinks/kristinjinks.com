@@ -17,6 +17,6 @@ journal: 'Estuarine, Coastal and Shelf Science'
 url: 'https://www.sciencedirect.com/science/article/pii/S0272771419308492'
 ---
 
-This research examines how saltmarsh grass ecosystems support fishery food webs in subtropical Australian estuarine environments. The study reveals the critical role of saltmarsh habitats in maintaining productive fisheries through complex food web interactions.
+We examined the fundamental role of saltmarsh grass ecosystems in supporting fishery food webs across subtropical Australian estuarine environments. Using stable isotope analysis and food web modeling, we demonstrate that saltmarsh vegetation provides critical basal production that supports commercially important fish species through complex trophic pathways. Our findings reveal that saltmarsh-derived organic matter forms the foundation of estuarine productivity, with direct implications for fisheries management and coastal habitat conservation.
 
 **Citation count: 36**

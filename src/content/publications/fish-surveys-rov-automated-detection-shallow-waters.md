@@ -7,6 +7,6 @@ journal: 'Frontiers in Marine Science'
 url: 'https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2022.918504/full'
 ---
 
-This research adapts automated fish detection and classification frameworks for use with remotely operated vehicles (ROVs) in shallow marine environments. The study advances mobile underwater survey techniques by integrating computer vision with ROV technology for improved fish monitoring.
+In this research, we successfully adapt automated fish detection and classification frameworks for deployment on remotely operated vehicles (ROVs) operating in shallow marine environments. We address key challenges in mobile underwater surveys, including variable lighting conditions, camera movement, and real-time processing constraints. By integrating advanced computer vision algorithms with ROV technology, we demonstrate improved accuracy and efficiency in fish monitoring compared to traditional static camera systems, providing a scalable solution for comprehensive marine biodiversity assessments in dynamic underwater environments.
 
 **Citation count: 10**

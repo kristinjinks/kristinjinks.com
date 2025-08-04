@@ -7,6 +7,6 @@ journal: 'Ecosphere'
 url: 'https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1002/ecs2.2928'
 ---
 
-This study investigates how habitat complexity shapes food web structures in Great Barrier Reef seagrass meadows. The research demonstrates the importance of structural complexity in determining ecological interactions and community dynamics in marine seagrass ecosystems.
+We investigated how habitat structural complexity shapes food web architecture and trophic interactions in Great Barrier Reef seagrass meadows. Using stable isotope analysis and size spectra analyses, we demonstrate that increased habitat complexity supports more diverse and interconnected food webs, with complex habitats facilitating higher trophic diversity and more specialized feeding relationships. Our findings reveal that structural complexity acts as a fundamental driver of ecosystem function in seagrass systems, influencing energy flow pathways and community stability, with important implications for seagrass conservation and restoration strategies.
 
 **Citation count: 28**
